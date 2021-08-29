@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+table, td, th {
+  border-collapse: collapse;
+}
+
+fieldset {
+  border: none;
+}
+
+input, a, button {
+  outline: 1;
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  opacity: 0;
+}
+
+.h {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(7%);
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#intro h1 {
+  position: absolute;
+  height: 160px;
+  overflow: hidden;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#intro h1 span {
+  display: block;
+  font: bold 140px/160px "Oswald", sans-serif;
+  transition: 1s;
+}
+#intro h1.on span {
+  transform: translateY(-100%);
+}
+#intro h1.on2 span {
+  transform: translateY(-200%);
+}
+#intro .intro_tit {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#intro .intro_tit .inner_tit .tit_txt {
+  overflow: hidden;
+}
+#intro .intro_tit .inner_tit .tit_txt span {
+  display: block;
+  font: 80px/1 "Oswald", sans-serif;
+  transform: translateY(100%);
+  transition: 0.5s;
+}
+#intro .intro_tit .inner_tit .tit_txt:nth-of-type(1) span {
+  text-align: right;
+  transition-delay: 0.2s;
+}
+#intro .intro_tit .inner_tit .tit_txt:nth-of-type(2) span {
+  transition-delay: 0.3s;
+}
+#intro .intro_tit .inner_tit .tit_txt:nth-of-type(3) span {
+  text-align: right;
+  transition-delay: 0.4s;
+}
+#intro .intro_tit .inner_tit .tit_txt.on span {
+  transform: translateY(0);
+}
+#intro .intro_tit > span {
+  font: 12px/1 "Oswald", sans-serif;
+  color: #111;
+  position: absolute;
+  bottom: 67%;
+  opacity: 0;
+}
+#intro .menuMo {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 5;
+}
+#intro .menuMo::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  transition: background-color 1s 1s transform 0.5s;
+}
+#intro .menuMo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #111;
+  transition: background-color 1s 1s transform 0.5s;
+}
+#intro .menuMo:hover::before {
+  transform: translateX(-5px);
+  transition: 0.5s;
+}
+#intro .menuMo:hover::after {
+  transform: translateX(5px);
+  transition: 0.5s;
+}
+#intro .menuMo.on::before {
+  top: 50%;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  background-color: tan;
+  transition: 0.5s;
+}
+#intro .menuMo.on::after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+  margin-top: 2px;
+  background-color: tan;
+  transition: 0.5s;
+}
+
+.menuMoCon {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #0e0e0e;
+  top: 0;
+  left: -100%;
+  transition: 1s;
+  z-index: 1;
+  padding: 80px;
+}
+.menuMoCon ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menuMoCon ul li {
+  margin-bottom: 40px;
+}
+.menuMoCon ul li a {
+  display: inline-block;
+  font: 120px/1 "Oswald", sans-serif;
+  transition: 0.5s;
+  color: transparent;
+  -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: tan;
+}
+.menuMoCon ul li a:hover {
+  color: tan;
+  font-style: italic;
+}
+.menuMoCon.on {
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
