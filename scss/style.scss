@@ -12,11 +12,11 @@
 
 section{
     width: 100%;
-    height: 100vh;
     position: relative;
 }
 
 #intro{
+    height: 100vh;
 
     h1{
         position: absolute;
@@ -48,7 +48,7 @@ section{
 
     .intro_tit{
         position: absolute;
-        bottom: 5%;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
 
@@ -96,7 +96,7 @@ section{
             font: 12px/1 'Oswald', sans-serif;
             color: #111;
             position: absolute;
-            bottom: 67%;
+            top: 44px;
             opacity: 0;
         }
     }
@@ -166,6 +166,147 @@ section{
     }
 }
 
+#self_info{
+    padding: 180px 0;
+    overflow: hidden;
+
+    .inner_txt{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 200px;
+
+        >div{
+            width: 30%;
+            height: 400px;
+            padding: 0 20px;
+
+            &.left_box{
+                display: flex;
+                align-items: center;
+
+                p{
+                    font: 24px/1.6 'Oswald', sans-serif;
+                }
+            }
+
+            &.right_box{
+
+                .left_box_pic{
+                    height: 100%;
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+
+    .slide_box{
+        width: 100%;
+        margin-bottom: 200px;
+
+        >div{
+
+            p{
+                font: bold 100px/1 'Oswald', sans-serif;
+            }
+            
+            &.upper_content{
+                width: 4606px;
+                margin-bottom: 60px;
+
+                p{
+                    color: #111;
+                    margin-left: -500px;
+                }
+            }
+
+            &.lower_content{
+                width: 5258px;
+
+                p{
+                    color: #999;
+                }
+            }
+
+        }
+    }
+
+    .self_list{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        ul{
+            width: 55%;
+
+            li{
+                width: 100%;
+                border-top: 1px solid #111;
+                transition: 0.5s;
+                background: #fff;
+                position: relative;
+                overflow: hidden;
+
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 140px;
+                    font: bold 60px/120px 'Oswald', sans-serif;
+                    color: transparent;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #111;
+                    padding-left: 20px;
+                    transition: 0.5s;
+
+                    span{
+                        display: block;
+                        font: bold 14px/1 'Oswald', sans-serif;
+                        -webkit-text-stroke-width: 0px;
+                        color: #111;
+                        transform: translateY(-20px);
+                        transition: 0.5s;
+                    }
+                }
+
+
+
+                &:last-child{
+                    border-bottom: 1px solid #111;
+                }
+
+                &::before{
+                    content: '';
+                    width: 40px;
+                    height: 1px;
+                    background: #fff;
+                    position: absolute;
+                    top: 50%;
+                    left: -40px;
+                    transition: 0.5s;
+                }
+
+                &:hover{
+                    background: rgb(205, 195, 189);
+
+                    &::before{
+                        left: 20px;
+                    }
+
+                    a{
+                        color: #fff;
+                        -webkit-text-stroke-width: 0px;
+                        transform: translateX(60px);
+
+                        span{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 .menuMoCon{
     width: 100%;
@@ -209,4 +350,22 @@ section{
     &.on{
         left: 0;
     }
+}
+
+.mouse_cursor{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid darkorange;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.self_list_frame{
+    width: 550px;
+    height: 280px;
+    position: fixed;
+    top: 0;
+    right: 120px;
 }

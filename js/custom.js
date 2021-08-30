@@ -17,6 +17,8 @@ window.onload = function(){
     let radius = 580;    
     let opc = 0;
 
+    // mousePointerCreate();
+
     drawTxt(ctx, centerX, centerY, "[0jo]WEBDEVELOPERWEBPUBLISHER", radius, angle);
 
     timeOut(intro_tit, "on", 2000);
@@ -107,3 +109,33 @@ function classToggle(el, className){
 
     (isOn) ? el.classList.remove(className) : el.classList.add(className);
 };
+
+function mousePointerCreate(){
+    const mouseCursor = document.createElement("div");
+    mouseCursor.classList.add("mouse_cursor");
+
+    document.querySelector("body").append(mouseCursor);
+};
+
+const self_list_btn = document.querySelectorAll(".self_list_btn");
+
+for(let el of self_list_btn){
+    el.addEventListener("mouseenter", (e)=>{
+        let target = e.currentTarget.getAttribute("data-link");
+        let frame = document.createElement("img");
+        let y = el.getBoundingClientRect().top;
+
+        frame.classList.add("self_list_frame");
+        frame.setAttribute("src", target);
+        frame.style.top = y + "px";
+
+        document.querySelector("body").append(frame);
+
+        
+    });
+
+    el.addEventListener("mouseleave", (e)=>{
+        document.querySelector(".self_list_frame").remove();
+    })
+};
+
